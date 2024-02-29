@@ -171,7 +171,7 @@ export default defineNuxtConfig({
         1
       )
 
-      const types = ['mods', 'modpacks', 'plugins', 'resourcepacks', 'shaders', 'datapacks']
+      const types = ['plugins']
 
       types.forEach((type) =>
         routes.push({

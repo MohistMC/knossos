@@ -78,7 +78,7 @@
     "message": "Sign in with"
   },
   "auth.sign-in.title": {
-    "message": "Sign In"
+    "message": "登录"
   },
   "auth.sign-in.use-password": {
     "message": "Or use a password"
@@ -186,7 +186,7 @@
     "message": "Save changes"
   },
   "button.sign-in": {
-    "message": "Sign in"
+    "message": "登录"
   },
   "button.sign-out": {
     "message": "Sign out"
@@ -411,7 +411,7 @@
     "message": "Toggle menu"
   },
   "layout.meta.description": {
-    "message": "Download Minecraft mods, plugins, datapacks, shaders, resourcepacks, and modpacks on Modrinth. Discover and publish projects on Modrinth with a modern, easy to use interface and API."
+    "message": "Download Minecraft plugins on Modrinth. Discover and publish projects on Modrinth with a modern, easy to use interface and API."
   },
   "layout.meta.og-description": {
     "message": "Discover and publish Minecraft content!"
@@ -485,47 +485,17 @@
   "project-type.collection.singular": {
     "message": "Collection"
   },
-  "project-type.datapack.plural": {
-    "message": "Data Packs"
-  },
-  "project-type.datapack.singular": {
-    "message": "Data Pack"
-  },
-  "project-type.mod.plural": {
-    "message": "Mods"
-  },
-  "project-type.mod.singular": {
-    "message": "Mod"
-  },
-  "project-type.modpack.plural": {
-    "message": "Modpacks"
-  },
-  "project-type.modpack.singular": {
-    "message": "Modpack"
-  },
   "project-type.plugin.plural": {
-    "message": "Plugins"
+    "message": "插件列表"
   },
   "project-type.plugin.singular": {
-    "message": "Plugin"
+    "message": "插件"
   },
   "project-type.project.plural": {
     "message": "Projects"
   },
   "project-type.project.singular": {
     "message": "Project"
-  },
-  "project-type.resourcepack.plural": {
-    "message": "Resource Packs"
-  },
-  "project-type.resourcepack.singular": {
-    "message": "Resource Pack"
-  },
-  "project-type.shader.plural": {
-    "message": "Shaders"
-  },
-  "project-type.shader.singular": {
-    "message": "Shader"
   },
   "revenue.transfers.total": {
     "message": "You have withdrawn {amount} in total."

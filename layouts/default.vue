@@ -614,29 +614,9 @@ const isMobileMenuOpen = ref(false)
 const isBrowseMenuOpen = ref(false)
 const navRoutes = computed(() => [
   {
-    label: formatMessage(getProjectTypeMessage('mod', true)),
-    href: '/mods',
-  },
-  {
     label: formatMessage(getProjectTypeMessage('plugin', true)),
     href: '/plugins',
-  },
-  {
-    label: formatMessage(getProjectTypeMessage('datapack', true)),
-    href: '/datapacks',
-  },
-  {
-    label: formatMessage(getProjectTypeMessage('shader', true)),
-    href: '/shaders',
-  },
-  {
-    label: formatMessage(getProjectTypeMessage('resourcepack', true)),
-    href: '/resourcepacks',
-  },
-  {
-    label: formatMessage(getProjectTypeMessage('modpack', true)),
-    href: '/modpacks',
-  },
+  }
 ])
 
 onMounted(() => {

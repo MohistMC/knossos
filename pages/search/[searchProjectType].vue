@@ -30,7 +30,7 @@
             @click="clearFilters"
           >
             <ClearIcon aria-hidden="true" />
-            Clear filters
+            清理标签
           </button>
           <section aria-label="Category filters">
             <div v-for="(categories, header) in categoriesMap" :key="header">
@@ -38,7 +38,7 @@
                 v-if="categories.filter((x) => x.project_type === projectType.actual).length > 0"
                 class="sidebar-menu-heading"
               >
-                {{ $formatCategoryHeader(header) }}
+                类别
               </h3>
 
               <SearchFilter
@@ -63,7 +63,7 @@
               "
               class="sidebar-menu-heading"
             >
-              Loaders
+              服务端核心
             </h3>
             <SearchFilter
               v-for="loader in tags.loaders.filter((x) => {
@@ -112,7 +112,7 @@
               "
               class="sidebar-menu-heading"
             >
-              Proxies
+              代理端
             </h3>
             <SearchFilter
               v-for="loader in tags.loaders.filter((x) =>
@@ -142,18 +142,18 @@
             </SearchFilter>
             <SearchFilter
               :active-filters="selectedEnvironments"
-              display-name="Server"
+              display-name="服务器"
               facet-name="server"
               @toggle="toggleEnv"
             >
               <ServerIcon aria-hidden="true" />
             </SearchFilter>
           </section>
-          <h3 class="sidebar-menu-heading">Minecraft versions</h3>
+          <h3 class="sidebar-menu-heading">MC 版本</h3>
           <Checkbox
             v-model="showSnapshots"
-            label="Show all versions"
-            description="Show all versions"
+            label="查看所有版本"
+            description="查看所有版本"
             style="margin-bottom: 0.5rem"
             :border="false"
           />
@@ -176,10 +176,10 @@
             placeholder="Choose versions..."
             @update:model-value="onSearchChange(1)"
           />
-          <h3 class="sidebar-menu-heading">Open source</h3>
+          <h3 class="sidebar-menu-heading">开源</h3>
           <Checkbox
             v-model="onlyOpenSource"
-            label="Open source only"
+            label="仅开源"
             style="margin-bottom: 0.5rem"
             :border="false"
             @update:model-value="onSearchChange(1)"

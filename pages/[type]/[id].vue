@@ -443,7 +443,7 @@
                 shown: project.gallery.length > 0 || !!currentMember,
               },
               {
-                label: 'Changelog',
+                label: '更新日志',
                 href: `/${project.project_type}/${
                   project.slug ? project.slug : project.id
                 }/changelog`,
@@ -499,7 +499,7 @@
             project.donation_urls.length > 0
           "
         >
-          <h2 class="card-header">External resources</h2>
+          <h2 class="card-header">相关链接</h2>
           <div class="links">
             <a
               v-if="project.issues_url"
@@ -569,7 +569,7 @@
         </template>
         <template v-if="featuredVersions.length > 0">
           <div class="featured-header">
-            <h2 class="card-header">Featured versions</h2>
+            <h2 class="card-header">特色版本</h2>
             <nuxt-link
               v-if="route.name !== 'type-id-versions' && (versions.length > 0 || currentMember)"
               :to="`/${project.project_type}/${

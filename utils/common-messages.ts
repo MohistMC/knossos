@@ -105,11 +105,11 @@ export const commonMessages = defineMessages({
   },
   settingsLabel: {
     id: 'label.settings',
-    defaultMessage: 'Settings',
+    defaultMessage: '设置',
   },
   signInButton: {
     id: 'button.sign-in',
-    defaultMessage: 'Sign in',
+    defaultMessage: '登录',
   },
   signOutButton: {
     id: 'button.sign-out',

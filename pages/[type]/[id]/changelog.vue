@@ -93,7 +93,7 @@ const props = defineProps({
   },
 })
 
-const title = `${props.project.title} - Changelog`
+const title = `${props.project.title} - 更新日志`
 const description = `View the changelog of ${props.project.title}'s ${props.versions.length} versions.`
 
 useSeoMeta({
