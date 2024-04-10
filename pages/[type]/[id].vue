@@ -367,37 +367,6 @@
             </div>
           </div>
         </div>
-        <div
-          v-if="currentMember && project.moderator_message"
-          class="universal-card moderation-card"
-        >
-          <h2 class="card-header">Message from the moderators:</h2>
-          <div v-if="project.moderator_message.body">
-            <p v-if="project.moderator_message.message" class="mod-message__title">
-              {{ project.moderator_message.message }}
-            </p>
-          </div>
-          <div
-            class="markdown-body"
-            v-html="
-              renderString(
-                project.moderator_message.body
-                  ? project.moderator_message.body
-                  : project.moderator_message.message
-              )
-            "
-          />
-          <div class="buttons status-buttons">
-            <button
-              v-if="tags.approvedStatuses.includes(project.status)"
-              class="iconified-button"
-              @click="clearMessage"
-            >
-              <ClearIcon />
-              Clear message
-            </button>
-          </div>
-        </div>
       </div>
       <section class="normal-page__content">
         <ProjectMemberHeader

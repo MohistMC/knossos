@@ -53,7 +53,7 @@
           >
             <Avatar :src="project.icon_url" size="xs" no-shadow raised />
             <span class="stacked">
-              <span class="title">{{ project.title }}</span>
+              <span class="title">{{ project.name }}</span>
               <span>{{ $formatProjectType(project.inferred_project_type) }}</span>
             </span>
           </nuxt-link>
@@ -123,7 +123,7 @@ const TIME_24H = 86400000
 const TIME_48H = TIME_24H * 2
 
 const { data: projects } = await useAsyncData('moderation/projects?count=1000', () =>
-  useBaseFetch('moderation/projects?count=1000')
+  useBaseFetch('moderation/projects?count=1000', { internal: true })
 )
 const members = ref([])
 const projectType = ref('all')
@@ -133,7 +133,7 @@ const projectsFiltered = computed(() =>
   projects.value.filter(
     (x) =>
       projectType.value === 'all' ||
-      app.$getProjectTypeForUrl(x.project_type, x.loaders) === projectType.value
+      app.$getProjectTypeForUrl(x.project_types[0], x.loaders) === projectType.value
   )
 )
 
@@ -163,7 +163,7 @@ const projectTypes = computed(() => {
 })
 
 if (projects.value) {
-  const teamIds = projects.value.map((x) => x.team)
+  const teamIds = projects.value.map((x) => x.team_id)
   const organizationIds = projects.value.filter((x) => x.organization).map((x) => x.organization)
 
   const url = `teams?ids=${encodeURIComponent(JSON.stringify(teamIds))}`
@@ -177,7 +177,7 @@ if (projects.value) {
     projects.value = projects.value.map((project) => {
       project.owner = members.value
         .flat()
-        .find((x) => x.team_id === project.team && x.role === 'Owner')
+        .find((x) => x.team_id === project.team_id && x.role === 'Owner')
       project.org = orgs.value.find((x) => x.id === project.organization)
       project.age = project.queued ? now - app.$dayjs(project.queued) : Number.MAX_VALUE
       project.age_warning = ''
@@ -187,7 +187,7 @@ if (projects.value) {
         project.age_warning = 'warning'
       }
       project.inferred_project_type = app.$getProjectTypeForUrl(
-        project.project_type,
+        project.project_types[0],
         project.loaders
       )
       return project
@@ -201,7 +201,7 @@ async function goToProjects() {
   await router.push({
     name: 'type-id',
     params: {
-      type: project.project_type,
+      type: project.project_types[0],
       id: project.slug ? project.slug : project.id,
     },
     state: {
