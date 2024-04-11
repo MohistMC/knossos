@@ -206,7 +206,17 @@ const categorys = {
   'economy': "经济",
   'equipment': "装备",
   'food': "食物",
-  'magic': "魔法"
+  'magic': "魔法",
+  'adventure': "冒险",
+  'cursed': "趣味",
+  'decoration': "装饰",
+  'social': "社交",
+  'storage': "存储",
+  'technology': "科技",
+  'transportation': "传输",
+  'utility': "实用"
+
+
 }
 
 export const formatCategory = (name) => categorys[name] ?? capitalizeString(name);
