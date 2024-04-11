@@ -702,7 +702,6 @@
 </template>
 <script setup>
 import {
-  Promotion,
   OverflowMenu,
   PopoutMenu,
   BookmarkIcon,
@@ -717,6 +716,7 @@ import {
   isUnderReview,
   isStaff,
 } from 'omorphia'
+import Promotion from '~/components/ui/Promotion.vue'
 import CrownIcon from '~/assets/images/utils/crown.svg'
 import CalendarIcon from '~/assets/images/utils/calendar.svg'
 import DownloadIcon from '~/assets/images/utils/download.svg'

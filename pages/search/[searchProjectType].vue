@@ -316,7 +316,7 @@
 </template>
 <script setup>
 import { Multiselect } from 'vue-multiselect'
-import { Promotion } from 'omorphia'
+import Promotion from '~/components/ui/Promotion.vue'
 import ProjectCard from '~/components/ui/ProjectCard.vue'
 import Pagination from '~/components/ui/Pagination.vue'
 import SearchFilter from '~/components/ui/search/SearchFilter.vue'

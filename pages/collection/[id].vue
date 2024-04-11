@@ -367,7 +367,6 @@ import {
   Avatar,
   Button,
   CalendarIcon,
-  Promotion,
   EditIcon,
   XIcon,
   SaveIcon,
@@ -385,6 +384,7 @@ import {
   LibraryIcon,
   BoxIcon,
 } from 'omorphia'
+import Promotion from '~/components/ui/Promotion.vue'
 
 import WorldIcon from 'assets/images/utils/world.svg'
 import UpToDate from 'assets/images/illustrations/up_to_date.svg'

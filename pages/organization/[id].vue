@@ -227,10 +227,11 @@ import {
   UsersIcon,
   SettingsIcon,
   ChartIcon,
-  Promotion,
   CheckIcon,
   XIcon,
 } from 'omorphia'
+import Promotion from '~/components/ui/Promotion.vue'
+
 import NavStack from '~/components/ui/NavStack.vue'
 import NavStackItem from '~/components/ui/NavStackItem.vue'
 import NavRow from '~/components/ui/NavRow.vue'

@@ -280,7 +280,9 @@
   </div>
 </template>
 <script setup>
-import { Promotion, LibraryIcon, BoxIcon, LinkIcon, LockIcon, XIcon } from 'omorphia'
+import { LibraryIcon, BoxIcon, LinkIcon, LockIcon, XIcon } from 'omorphia'
+import Promotion from '~/components/ui/Promotion.vue'
+
 import ProjectCard from '~/components/ui/ProjectCard.vue'
 import Badge from '~/components/ui/Badge.vue'
 import { reportUser } from '~/utils/report-helpers.ts'

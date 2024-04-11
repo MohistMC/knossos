@@ -138,13 +138,14 @@
                 <nuxt-link class="iconified-button raised-button" to="/auth/sign-in">
                   <LogInIcon /> {{ formatMessage(commonMessages.signInButton) }}
                 </nuxt-link>
-                <nuxt-link
+                <!--  -->
+                <!-- <nuxt-link
                   v-if="$route.path !== '/app' && !cosmetics.hideModrinthAppPromos"
                   class="btn btn-outline btn-primary app-btn"
                   to="/app"
                 >
                   <DownloadIcon /> {{ formatMessage(messages.getModrinthApp) }}
-                </nuxt-link>
+                </nuxt-link> -->
               </section>
             </section>
           </section>
