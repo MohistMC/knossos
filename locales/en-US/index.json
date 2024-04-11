@@ -81,7 +81,7 @@
     "message": "登录"
   },
   "auth.sign-in.use-password": {
-    "message": "或者使用密码"
+    "message": "账号密码登录"
   },
   "auth.sign-up.action.create-account": {
     "message": "创建账户"
@@ -96,7 +96,7 @@
     "message": "用户名"
   },
   "auth.sign-up.legal-dislaimer": {
-    "message": "创建账户即表示您同意 MCPLUGINS的 <terms-link>条款</terms-link> 和 <privacy-policy-link>隐私政策</privacy-policy-link>."
+    "message": "创建账户即表示您同意 MCPLUGIN 的 <terms-link>条款</terms-link> 和 <privacy-policy-link>隐私政策</privacy-policy-link>."
   },
   "auth.sign-up.notification.password-mismatch.text": {
     "message": "密码不匹配!"
@@ -108,7 +108,7 @@
     "message": "已有账户?"
   },
   "auth.sign-up.subscribe.label": {
-    "message": "订阅有关MCPLUGINS的更新"
+    "message": "订阅有关MCPLUGIN的更新"
   },
   "auth.sign-up.title": {
     "message": "注册"
@@ -153,13 +153,13 @@
     "message": "验证邮件"
   },
   "auth.welcome.checkbox.subscribe": {
-    "message": "订阅有关MCPLUGINS的更新"
+    "message": "订阅有关MCPLUGIN的更新"
   },
   "auth.welcome.description": {
     "message": "感谢您创建帐户, 您现在可以关注和创建项目、接收有关您喜爱的插件等项目的更新!"
   },
   "auth.welcome.label.tos": {
-    "message": "创建账户即表示您同意 MCPLUGINS的 <terms-link>条款</terms-link> 和 <privacy-policy-link>隐私政策</privacy-policy-link>."
+    "message": "创建账户即表示您同意 MCPLUGIN 的 <terms-link>条款</terms-link> 和 <privacy-policy-link>隐私政策</privacy-policy-link>."
   },
   "auth.welcome.long-title": {
     "message": "欢迎使用MCPLUGIN!"
@@ -378,7 +378,7 @@
     "message": "互动"
   },
   "layout.footer.legal-disclaimer": {
-    "message": "不是官方 Minecraft 服务,未经 Mojang 或 MICROSOFT 批准或与 MOJANG 和 MICROSOFT 相关."
+    "message": "MCPLUGIN 不是Minecraft官方服务网站，与MOJANG和微软无任何关系。"
   },
   "layout.footer.open-source": {
     "message": "Modrinth is <github-link>open source</github-link>."
