@@ -194,35 +194,21 @@ export const formatProjectType = (name) => {
   return capitalizeString(name)
 }
 
-export const formatCategory = (name) => {
-  if (name === 'bungeecord') {
-    return 'BungeeCord'
-  } else if (name === 'worldgen') {
-    return '世界生成器'
-  } else if (name === 'food') {
-    return '食物'
-  } else if (name === 'game-mechanics') {
-    return '游戏机制'
-  } else if (name === 'library') {
-    return '前置'
-  } else if (name === 'library') {
-    return '前置'
-  } else if (name === 'management') {
-    return '管理'
-  } else if (name === 'minigame') {
-    return '小游戏'
-  } else if (name === 'mobs') {
-    return '怪物'
-  } else if (name === 'optimization') {
-    return '优化'
-  } else if (name === 'economy') {
-    return '经济'
-  } else if (name === 'equipment') {
-    return '装备'
-  }
-
-  return capitalizeString(name)
+const categorys = {
+  'bungeecord': "Bungeecord",
+  'worldgen': "世界生成器",
+  'game-mechanics': "游戏机制",
+  'library': "前置",
+  'management': "管理",
+  'minigame': "小游戏",
+  'mobs': "怪物",
+  'optimization': "优化",
+  'economy': "经济",
+  'equipment': "装备",
+  'food': "食物"
 }
+
+export const formatCategory = (name) => categorys [name] ?? capitalizeString(name);
 
 export const formatCategoryHeader = (name) => {
   return capitalizeString(name)
