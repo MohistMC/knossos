@@ -7,5 +7,5 @@
   <Url type="text/html" method="get" template="https://modrinth.com/mods?q={searchTerms}"/>
   <Developer>Rinth, Inc.</Developer>
   <Attribution>Rinth, Inc.</Attribution>
-  <moz:SearchForm>https://modrinth.com/mods</moz:SearchForm>
+  <moz:SearchForm>https://modrinth.com/plugins</moz:SearchForm>
 </OpenSearchDescription>
