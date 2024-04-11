@@ -22,7 +22,7 @@
         community.
       </h2>
       <div class="button-group">
-        <nuxt-link to="/plugins" class="iconified-button brand-button"> 浏览插件列表 </nuxt-link>
+        <nuxt-link to="/mods" class="iconified-button brand-button"> Discover mods </nuxt-link>
         <nuxt-link
           v-if="!auth.user"
           to="/auth/sign-up"

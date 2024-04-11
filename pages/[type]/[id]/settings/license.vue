@@ -3,7 +3,7 @@
     <section class="universal-card">
       <div class="adjacent-input">
         <label for="license-multiselect">
-          <span class="label__title size-card-header">开源协议</span>
+          <span class="label__title size-card-header">License</span>
           <span class="label__description">
             It is very important to choose a proper license for your
             {{ $formatProjectType(project.project_type).toLowerCase() }}. You may choose one from

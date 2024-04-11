@@ -88,7 +88,7 @@
                   <NuxtLink class="item button-transparent" :to="`/user/${auth.user.username}`">
                     <div class="title profile-link">
                       <div class="username">@{{ auth.user.username }}</div>
-                      <div class="prompt">{{ formatMessage(messages.visitYourProfile) }}</div>
+                      <div class="prompt">{{ formatMessage(commonMessages.visitYourProfile) }}</div>
                     </div>
                   </NuxtLink>
                   <hr class="divider" />
@@ -124,16 +124,6 @@
                   >
                     <ModerationIcon class="icon" />
                     <span class="title">{{ formatMessage(commonMessages.moderationLabel) }}</span>
-                  </NuxtLink>
-                  <NuxtLink
-                    v-if="!cosmetics.hideModrinthAppPromos"
-                    class="item button-transparent primary-color"
-                    to="/app"
-                  >
-                    <DownloadIcon class="icon" />
-                    <span class="title">
-                      {{ formatMessage(messages.getModrinthApp) }}
-                    </span>
                   </NuxtLink>
                   <hr class="divider" />
                   <button class="item button-transparent" @click="logoutUser()">
@@ -199,7 +189,7 @@
               />
               <div class="account-text">
                 <div>@{{ auth.user.username }}</div>
-                <div>{{ formatMessage(messages.visitYourProfile) }}</div>
+                <div>{{ formatMessage(commonMessages.visitYourProfile) }}</div>
               </div>
             </NuxtLink>
             <nuxt-link v-else class="iconified-button brand-button" to="/auth/sign-in">
@@ -346,6 +336,7 @@ import ModalCreation from '~/components/ui/ModalCreation.vue'
 import Avatar from '~/components/ui/Avatar.vue'
 import { getProjectTypeMessage } from '~/utils/i18n-project-type.ts'
 import { commonMessages } from '~/utils/common-messages.ts'
+import { DARK_THEMES } from '~/composables/theme.js'
 
 const { formatMessage } = useVIntl()
 
@@ -404,10 +395,6 @@ const navMenuMessages = defineMessages({
 })
 
 const messages = defineMessages({
-  visitYourProfile: {
-    id: 'layout.label.visit-your-profile',
-    defaultMessage: 'Visit your profile',
-  },
   toggleMenu: {
     id: 'layout.menu-toggle.action',
     defaultMessage: 'Toggle menu',
@@ -478,7 +465,7 @@ const footerMessages = defineMessages({
   legalDisclaimer: {
     id: 'layout.footer.legal-disclaimer',
     defaultMessage:
-      '不是官方Minecraft服务。 未经Mojang或MICROSOFT批准或与MOJANG或MICROSOFT 相关。',
+      'NOT AN OFFICIAL MINECRAFT SERVICE. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.',
   },
 })
 
@@ -617,7 +604,12 @@ function toggleBrowseMenu() {
   }
 }
 function changeTheme() {
-  updateTheme(app.$colorMode.value === 'dark' ? 'light' : 'dark', true)
+  updateTheme(
+    DARK_THEMES.includes(app.$colorMode.value)
+      ? 'light'
+      : cosmetics.value.preferredDarkTheme ?? 'dark',
+    true
+  )
 }
 
 function hideStagingBanner() {
@@ -674,6 +666,15 @@ function hideStagingBanner() {
         a {
           align-items: center;
           display: flex;
+
+          &:not(:focus-visible) {
+            outline: none;
+
+            &.router-link-exact-active {
+              outline: 2px solid transparent;
+              border-radius: 0.25rem;
+            }
+          }
         }
 
         .small-logo {
@@ -802,6 +803,7 @@ function hideStagingBanner() {
               display: flex;
               justify-content: center;
               padding: 0;
+              outline: none;
 
               .user-icon {
                 height: 2rem;
@@ -852,6 +854,7 @@ function hideStagingBanner() {
                 display: flex;
                 padding: 0.5rem 0.75rem;
                 width: 100%;
+                outline: none;
 
                 .icon {
                   margin-right: 0.5rem;
@@ -862,6 +865,7 @@ function hideStagingBanner() {
                 &.router-link-exact-active {
                   color: var(--color-button-text-active);
                   background-color: var(--color-button-bg);
+                  outline: 2px solid transparent;
 
                   &.primary-color {
                     color: var(--color-button-text-active);

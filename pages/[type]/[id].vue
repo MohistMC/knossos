@@ -412,7 +412,7 @@
                 shown: project.gallery.length > 0 || !!currentMember,
               },
               {
-                label: '更新日志',
+                label: 'Changelog',
                 href: `/${project.project_type}/${
                   project.slug ? project.slug : project.id
                 }/changelog`,
@@ -430,11 +430,20 @@
                 href: `/${project.project_type}/${
                   project.slug ? project.slug : project.id
                 }/moderation`,
-                shown: !!currentMember,
+                shown:
+                  !!currentMember &&
+                  (isRejected(project) || isUnderReview(project) || isStaff(auth.user)),
               },
             ]"
           />
           <div v-if="auth.user && currentMember" class="input-group">
+            <button
+              v-if="tags.staffRoles.includes(auth.user.role) && !showModerationChecklist"
+              class="iconified-button"
+              @click="showModerationChecklist = true"
+            >
+              <EyeIcon /> Checklist
+            </button>
             <nuxt-link
               :to="`/${project.project_type}/${project.slug ? project.slug : project.id}/settings`"
               class="iconified-button"
@@ -468,7 +477,7 @@
             project.donation_urls.length > 0
           "
         >
-          <h2 class="card-header">相关链接</h2>
+          <h2 class="card-header">External resources</h2>
           <div class="links">
             <a
               v-if="project.issues_url"
@@ -538,7 +547,7 @@
         </template>
         <template v-if="featuredVersions.length > 0">
           <div class="featured-header">
-            <h2 class="card-header">特色版本</h2>
+            <h2 class="card-header">Featured versions</h2>
             <nuxt-link
               v-if="route.name !== 'type-id-versions' && (versions.length > 0 || currentMember)"
               :to="`/${project.project_type}/${
@@ -723,6 +732,7 @@
     <ModerationChecklist
       v-if="auth.user && tags.staffRoles.includes(auth.user.role) && showModerationChecklist"
       :project="project"
+      :future-projects="futureProjects"
       :reset-project="resetProject"
     />
   </div>
@@ -738,11 +748,14 @@ import {
   PlusIcon,
   Checkbox,
   ChartIcon,
+  EyeIcon,
   renderString,
+  isRejected,
+  isUnderReview,
+  isStaff,
 } from 'omorphia'
 import CrownIcon from '~/assets/images/utils/crown.svg'
 import CalendarIcon from '~/assets/images/utils/calendar.svg'
-import ClearIcon from '~/assets/images/utils/clear.svg'
 import DownloadIcon from '~/assets/images/utils/download.svg'
 import UpdateIcon from '~/assets/images/utils/updated.svg'
 import QueuedIcon from '~/assets/images/utils/list-end.svg'
@@ -1011,31 +1024,6 @@ if (!route.name.startsWith('type-id-settings')) {
 
 const onUserCollectProject = useClientTry(userCollectProject)
 
-async function clearMessage() {
-  startLoading()
-
-  try {
-    await useBaseFetch(`project/${project.value.id}`, {
-      method: 'PATCH',
-      body: {
-        moderation_message: null,
-        moderation_message_body: null,
-      },
-    })
-
-    project.value.moderator_message = null
-  } catch (err) {
-    data.$notify({
-      group: 'main',
-      title: 'An error occurred',
-      text: err.data.description,
-      type: 'error',
-    })
-  }
-
-  stopLoading()
-}
-
 async function setProcessing() {
   startLoading()
 
@@ -1180,8 +1168,10 @@ async function copyId() {
 const collapsedChecklist = ref(false)
 
 const showModerationChecklist = ref(false)
+const futureProjects = ref([])
 if (process.client && history && history.state && history.state.showChecklist) {
   showModerationChecklist.value = true
+  futureProjects.value = history.state.projects
 }
 </script>
 <style lang="scss" scoped>

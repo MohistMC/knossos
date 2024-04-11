@@ -74,6 +74,7 @@
     <section id="messages" class="universal-card">
       <h2>Messages</h2>
       <p>
+        This is a private conversation thread with the Modrinth moderators. They may message you
         with issues concerning this project. This thread is only checked when you submit your
         project for review. For additional inquiries, contact
         <a href="https://support.modrinth.com">Modrinth support</a>.

@@ -187,7 +187,7 @@
       </div>
     </div>
     <div class="version-page__changelog universal-card">
-      <h3>更新日志</h3>
+      <h3>Changelog</h3>
       <template v-if="isEditing">
         <div class="changelog-editor-spacing">
           <MarkdownEditor v-model="version.changelog" :on-image-upload="onImageUpload" />
@@ -954,8 +954,8 @@ export default defineNuxtComponent({
     getPreviousLabel() {
       return this.$router.options.history.state.back &&
         this.$router.options.history.state.back.endsWith('/changelog')
-        ? '更新日志'
-        : '版本列表'
+        ? 'Changelog'
+        : 'Versions'
     },
     acceptFileFromProjectType,
     renderHighlightedString,
