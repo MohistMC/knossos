@@ -555,7 +555,7 @@
               :show-labels="false"
               :limit="6"
               :hide-selected="true"
-              placeholder="Choose versions..."
+              placeholder="选择版本..."
             />
             <Checkbox
               v-model="showSnapshots"

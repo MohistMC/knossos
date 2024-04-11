@@ -417,10 +417,10 @@
     "message": "An error occurred"
   },
   "profile.button.manage-projects": {
-    "message": "Manage projects"
+    "message": "管理项目"
   },
   "profile.button.report": {
-    "message": "Report"
+    "message": "举报"
   },
   "profile.error.not-found": {
     "message": "User not found"
@@ -456,10 +456,10 @@
     "message": "{count, plural, one {<stat>{count}</stat> follower} other {<stat>{count}</stat> followers}} of projects"
   },
   "profile.user-id": {
-    "message": "User ID: {id}"
+    "message": "用户ID: {id}"
   },
   "project-type.all": {
-    "message": "All"
+    "message": "所有"
   },
   "project-type.collection.plural": {
     "message": "Collections"

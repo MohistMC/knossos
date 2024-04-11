@@ -63,7 +63,7 @@
               "
               class="sidebar-menu-heading"
             >
-              服务端核心
+              服务端
             </h3>
             <SearchFilter
               v-for="loader in tags.loaders.filter((x) => {
@@ -173,7 +173,7 @@
             :clear-search-on-select="false"
             :show-labels="false"
             :selectable="() => selectedVersions.length <= 6"
-            placeholder="Choose versions..."
+            placeholder="版本选择..."
             @update:model-value="onSearchChange(1)"
           />
           <h3 class="sidebar-menu-heading">开源</h3>
@@ -207,7 +207,7 @@
               v-model="query"
               type="search"
               name="search"
-              :placeholder="`Search ${projectType.display}s...`"
+              :placeholder="`搜索插件...`"
               autocomplete="off"
               @input="onSearchChange(1)"
             />

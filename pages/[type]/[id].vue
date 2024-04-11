@@ -279,7 +279,7 @@
                   @click="userFollowProject(project)"
                 >
                   <HeartIcon aria-hidden="true" />
-                  Follow
+                  关注
                 </button>
                 <button
                   v-if="user.follows.find((x) => x.id === project.id)"
@@ -287,11 +287,11 @@
                   @click="userUnfollowProject(project)"
                 >
                   <HeartIcon fill="currentColor" aria-hidden="true" />
-                  Unfollow
+                  取消关注
                 </button>
                 <PopoutMenu class="btn" direction="right" position="bottom" from="top-right">
                   <BookmarkIcon aria-hidden="true" />
-                  Save
+                  收藏
                   <template #menu>
                     <input
                       v-model="displayCollectionsSearch"
@@ -333,8 +333,8 @@
                   :direction="cosmetics.projectLayout ? 'left' : 'right'"
                 >
                   <MoreHorizontalIcon />
-                  <template #report> <ReportIcon /> Report</template>
-                  <template #copy-id> <ClipboardCopyIcon /> Copy ID</template>
+                  <template #report> <ReportIcon /> 举报</template>
+                  <template #copy-id> <ClipboardCopyIcon /> 复制ID</template>
                 </OverflowMenu>
               </template>
               <template v-else>
@@ -360,8 +360,8 @@
                   :direction="cosmetics.projectLayout ? 'left' : 'right'"
                 >
                   <MoreHorizontalIcon />
-                  <template #report> <ReportIcon /> Report</template>
-                  <template #copy-id> <ClipboardCopyIcon /> Copy ID</template>
+                  <template #report> <ReportIcon /> 举报</template>
+                  <template #copy-id> <ClipboardCopyIcon /> 复制ID</template>
                 </OverflowMenu>
               </template>
             </div>
@@ -401,25 +401,25 @@
           <NavRow
             :links="[
               {
-                label: 'Description',
+                label: '介绍',
                 href: `/${project.project_type}/${project.slug ? project.slug : project.id}`,
               },
               {
-                label: 'Gallery',
+                label: '画廊',
                 href: `/${project.project_type}/${
                   project.slug ? project.slug : project.id
                 }/gallery`,
                 shown: project.gallery.length > 0 || !!currentMember,
               },
               {
-                label: 'Changelog',
+                label: '更新日志',
                 href: `/${project.project_type}/${
                   project.slug ? project.slug : project.id
                 }/changelog`,
                 shown: versions.length > 0,
               },
               {
-                label: 'Versions',
+                label: '版本列表',
                 href: `/${project.project_type}/${
                   project.slug ? project.slug : project.id
                 }/versions`,
@@ -477,7 +477,7 @@
             project.donation_urls.length > 0
           "
         >
-          <h2 class="card-header">External resources</h2>
+          <h2 class="card-header">外部链接</h2>
           <div class="links">
             <a
               v-if="project.issues_url"
@@ -487,7 +487,7 @@
               rel="noopener nofollow ugc"
             >
               <IssuesIcon aria-hidden="true" />
-              <span>Issues</span>
+              <span>反馈</span>
             </a>
             <a
               v-if="project.source_url"
@@ -497,7 +497,7 @@
               rel="noopener nofollow ugc"
             >
               <CodeIcon aria-hidden="true" />
-              <span>Source</span>
+              <span>源代码</span>
             </a>
             <a
               v-if="project.wiki_url"
@@ -508,15 +508,6 @@
             >
               <WikiIcon aria-hidden="true" />
               <span>Wiki</span>
-            </a>
-            <a
-              v-if="project.discord_url"
-              :href="project.discord_url"
-              :target="$external()"
-              rel="noopener nofollow ugc"
-            >
-              <DiscordIcon class="shrink" aria-hidden="true" />
-              <span>Discord</span>
             </a>
             <a
               v-for="(donation, index) in project.donation_urls"
@@ -547,7 +538,7 @@
         </template>
         <template v-if="featuredVersions.length > 0">
           <div class="featured-header">
-            <h2 class="card-header">Featured versions</h2>
+            <h2 class="card-header">版本列表</h2>
             <nuxt-link
               v-if="route.name !== 'type-id-versions' && (versions.length > 0 || currentMember)"
               :to="`/${project.project_type}/${
@@ -555,7 +546,7 @@
               }/versions#all-versions`"
               class="goto-link"
             >
-              See all
+              查看所有
               <ChevronRightIcon class="featured-header-chevron" aria-hidden="true" />
             </nuxt-link>
           </div>
@@ -602,7 +593,7 @@
           </div>
           <hr class="card-divider" />
         </template>
-        <h2 class="card-header">Project members</h2>
+        <h2 class="card-header">项目发布者</h2>
         <nuxt-link
           v-if="organization"
           class="team-member columns button-transparent"
@@ -634,10 +625,10 @@
           </div>
         </nuxt-link>
         <hr class="card-divider" />
-        <h2 class="card-header">Technical information</h2>
+        <h2 class="card-header">技术信息</h2>
         <div class="infos">
           <div class="info">
-            <div class="key">License</div>
+            <div class="key">开源协议</div>
             <div class="value lowercase">
               <a
                 v-if="project.license.url"
@@ -660,36 +651,8 @@
               <span v-else>{{ licenseIdDisplay }}</span>
             </div>
           </div>
-          <div
-            v-if="
-              project.project_type !== 'resourcepack' &&
-              project.project_type !== 'plugin' &&
-              project.project_type !== 'shader' &&
-              project.project_type !== 'datapack'
-            "
-            class="info"
-          >
-            <div class="key">Client side</div>
-            <div class="value">
-              {{ project.client_side }}
-            </div>
-          </div>
-          <div
-            v-if="
-              project.project_type !== 'resourcepack' &&
-              project.project_type !== 'plugin' &&
-              project.project_type !== 'shader' &&
-              project.project_type !== 'datapack'
-            "
-            class="info"
-          >
-            <div class="key">Server side</div>
-            <div class="value">
-              {{ project.server_side }}
-            </div>
-          </div>
           <div class="info">
-            <div class="key">Project ID</div>
+            <div class="key">项目ID</div>
             <div class="value lowercase">
               <CopyCode :text="project.id" />
             </div>

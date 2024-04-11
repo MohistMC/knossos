@@ -195,44 +195,30 @@ export const formatProjectType = (name) => {
 }
 
 export const formatCategory = (name) => {
-  if (name === 'modloader') {
-    return "Risugami's ModLoader"
-  } else if (name === 'bungeecord') {
+  if (name === 'bungeecord') {
     return 'BungeeCord'
-  } else if (name === 'liteloader') {
-    return 'LiteLoader'
-  } else if (name === 'neoforge') {
-    return 'NeoForge'
-  } else if (name === 'game-mechanics') {
-    return 'Game Mechanics'
   } else if (name === 'worldgen') {
-    return 'World Generation'
-  } else if (name === 'core-shaders') {
-    return 'Core Shaders'
-  } else if (name === 'gui') {
-    return 'GUI'
-  } else if (name === '8x-') {
-    return '8x or lower'
-  } else if (name === '512x+') {
-    return '512x or higher'
-  } else if (name === 'kitchen-sink') {
-    return 'Kitchen Sink'
-  } else if (name === 'path-tracing') {
-    return 'Path Tracing'
-  } else if (name === 'pbr') {
-    return 'PBR'
-  } else if (name === 'datapack') {
-    return 'Data Pack'
-  } else if (name === 'colored-lighting') {
-    return 'Colored Lighting'
-  } else if (name === 'optifine') {
-    return 'OptiFine'
-  } else if (name === 'mrpack') {
-    return 'Modpack'
-  } else if (name === 'minecraft') {
-    return 'Resource Pack'
-  } else if (name === 'vanilla') {
-    return 'Vanilla Shader'
+    return '世界生成器'
+  } else if (name === 'food') {
+    return '食物'
+  } else if (name === 'game-mechanics') {
+    return '游戏机制'
+  } else if (name === 'library') {
+    return '前置'
+  } else if (name === 'library') {
+    return '前置'
+  } else if (name === 'management') {
+    return '管理'
+  } else if (name === 'minigame') {
+    return '小游戏'
+  } else if (name === 'mobs') {
+    return '怪物'
+  } else if (name === 'optimization') {
+    return '优化'
+  } else if (name === 'economy') {
+    return '经济'
+  } else if (name === 'equipment') {
+    return '装备'
   }
 
   return capitalizeString(name)
