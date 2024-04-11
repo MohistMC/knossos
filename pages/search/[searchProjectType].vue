@@ -200,7 +200,7 @@
             Filters...
           </button>
           <div class="iconified-input">
-            <label class="hidden" for="search">Search</label>
+            <label class="hidden" for="search">搜索</label>
             <SearchIcon aria-hidden="true" />
             <input
               id="search"
@@ -215,7 +215,7 @@
         </div>
         <div class="sort-controls">
           <div class="labeled-control">
-            <span class="labeled-control__label">Sort by</span>
+            <span class="labeled-control__label">排序方式</span>
             <Multiselect
               v-model="sortType"
               placeholder="Select one"
@@ -235,7 +235,7 @@
             </Multiselect>
           </div>
           <div class="labeled-control">
-            <span class="labeled-control__label">Show per page</span>
+            <span class="labeled-control__label">每页显示</span>
             <Multiselect
               v-model="maxResults"
               placeholder="Select one"
@@ -350,19 +350,19 @@ const onlyOpenSource = ref(false)
 const showSnapshots = ref(false)
 const selectedEnvironments = ref([])
 const sortTypes = shallowReadonly([
-  { display: 'Relevance', name: 'relevance' },
-  { display: 'Download count', name: 'downloads' },
-  { display: 'Follow count', name: 'follows' },
-  { display: 'Recently published', name: 'newest' },
-  { display: 'Recently updated', name: 'updated' },
+  { display: '关联', name: 'relevance' },
+  { display: '下载量', name: 'downloads' },
+  { display: '关注量', name: 'follows' },
+  { display: '最近上传', name: 'newest' },
+  { display: '最近更新', name: 'updated' },
 ])
-const sortType = ref({ display: 'Relevance', name: 'relevance' })
+const sortType = ref({ display: '最近更新', name: 'updated' })
 const maxResults = ref(20)
 const currentPage = ref(1)
 const projectType = ref({ id: 'mod', display: 'mod', actual: 'mod' })
 
 const ogTitle = computed(
-  () => `Search ${projectType.value.display}s${query.value ? ' | ' + query.value : ''}`
+  () => `搜索 ${projectType.value.display}s${query.value ? ' | ' + query.value : ''}`
 )
 const description = computed(
   () =>

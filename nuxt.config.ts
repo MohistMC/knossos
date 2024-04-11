@@ -51,7 +51,7 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en',
       },
-      title: 'Modrinth',
+      title: '插件网',
       link: [
         // The type is necessary because the linter can't always compare this very nested/complex type on itself
         ...preloadedFonts.map((font): object => {
@@ -69,12 +69,6 @@ export default defineNuxtConfig({
         ...Object.entries(favicons).map(([media, href]): object => {
           return { rel: 'apple-touch-icon', type: 'image/x-icon', href, media, sizes: '64x64' }
         }),
-        {
-          rel: 'search',
-          type: 'application/opensearchdescription+xml',
-          href: '/opensearch.xml',
-          title: 'Modrinth mods',
-        },
       ],
     },
   },

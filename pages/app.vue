@@ -349,22 +349,6 @@ useSeoMeta({
             and update mods with a single click.
           </p>
         </div>
-        <div class="feature gradient-border playing">
-          <div class="text">
-            <h3>Play with your favorite mods</h3>
-            <p>Use the Modrinth App to download and play with your favorite mods and modpacks.</p>
-          </div>
-          <img
-            src="https://cdn-raw.modrinth.com/app-landing/cobblemon-launcher.webp"
-            alt="The Modrinth App playing Cobblemon for Fabric"
-            class="launcher"
-          />
-          <img
-            src="https://cdn-raw.modrinth.com/app-landing/cobblemon.webp"
-            alt="Minecraft playing Cobblemon for Fabric"
-            class="minecraft"
-          />
-        </div>
         <div class="feature gradient-border sharing">
           <div class="row header">Included mods <EditIcon /></div>
           <div class="table">
@@ -960,18 +944,6 @@ useSeoMeta({
           </clipPath>
         </defs>
       </svg>
-      <div class="overlay">
-        <h2 class="main-header">
-          Read more about <br />
-          <strong class="main-header-strong">Modrinth</strong>
-        </h2>
-        <a
-          href="https://blog.modrinth.com/?utm_source=website&utm_source=homepage&utm_campaign=newsletter"
-          class="iconified-button brand-button"
-        >
-          Visit the blog
-        </a>
-      </div>
     </div>
   </div>
 </template>

@@ -177,13 +177,13 @@
     "message": "Create a project"
   },
   "button.edit": {
-    "message": "Edit"
+    "message": "编辑"
   },
   "button.save": {
-    "message": "Save"
+    "message": "保存"
   },
   "button.save-changes": {
-    "message": "Save changes"
+    "message": "保存更改"
   },
   "button.sign-in": {
     "message": "登录"
@@ -263,21 +263,6 @@
   "dashboard.collections.long-title": {
     "message": "Your collections"
   },
-  "frog": {
-    "message": "You've been frogged! 🐸"
-  },
-  "frog.altText": {
-    "message": "A photorealistic painting of a frog labyrinth"
-  },
-  "frog.froggedPeople": {
-    "message": "{count, plural, one {{count} more person} other {{count} more people}} were also frogged!"
-  },
-  "frog.sinceOpened": {
-    "message": "This page was opened {ago}"
-  },
-  "frog.title": {
-    "message": "Frog"
-  },
   "input.view.gallery": {
     "message": "Gallery view"
   },
@@ -291,16 +276,16 @@
     "message": "Collections"
   },
   "label.created-ago": {
-    "message": "Created {ago}"
+    "message": "创建于 {ago}"
   },
   "label.dashboard": {
     "message": "Dashboard"
   },
   "label.delete": {
-    "message": "Delete"
+    "message": "删除"
   },
   "label.description": {
-    "message": "Description"
+    "message": "介绍"
   },
   "label.error": {
     "message": "Error"
@@ -312,7 +297,7 @@
     "message": "Moderation"
   },
   "label.notifications": {
-    "message": "Notifications"
+    "message": "订阅"
   },
   "label.password": {
     "message": "Password"
@@ -339,7 +324,7 @@
     "message": "Visibility"
   },
   "layout.action.change-theme": {
-    "message": "Change theme"
+    "message": "更改主题"
   },
   "layout.action.get-modrinth-app": {
     "message": "Get Modrinth App"
@@ -369,40 +354,40 @@
     "message": "Careers"
   },
   "layout.footer.company.privacy": {
-    "message": "Privacy"
+    "message": "隐私"
   },
   "layout.footer.company.rules": {
-    "message": "Rules"
+    "message": "规则"
   },
   "layout.footer.company.terms": {
-    "message": "Terms"
+    "message": "条款"
   },
   "layout.footer.company.title": {
-    "message": "Company"
+    "message": "公司"
   },
   "layout.footer.interact.title": {
-    "message": "Interact"
+    "message": "联系"
   },
   "layout.footer.legal-disclaimer": {
-    "message": "NOT AN OFFICIAL MINECRAFT SERVICE. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT."
+    "message": "不是官方Minecraft服务。 未经Mojang或MICROSOFT批准或与MOJANG或MICROSOFT 相关。"
   },
   "layout.footer.open-source": {
     "message": "Modrinth is <github-link>open source</github-link>."
   },
   "layout.footer.resources.blog": {
-    "message": "Blog"
+    "message": "博客"
   },
   "layout.footer.resources.docs": {
-    "message": "Docs"
+    "message": "文档"
   },
   "layout.footer.resources.status": {
-    "message": "Status"
+    "message": "状态"
   },
   "layout.footer.resources.support": {
-    "message": "Support"
+    "message": "支持"
   },
   "layout.footer.resources.title": {
-    "message": "Resources"
+    "message": "资源"
   },
   "layout.label.visit-your-profile": {
     "message": "Visit your profile"
@@ -417,10 +402,10 @@
     "message": "Discover and publish Minecraft content!"
   },
   "layout.nav.home": {
-    "message": "Home"
+    "message": "主页"
   },
   "layout.nav.search": {
-    "message": "Search"
+    "message": "搜索"
   },
   "notification.error.title": {
     "message": "An error occurred"
@@ -540,10 +525,10 @@
     "message": "Write collections"
   },
   "scopes.notificationRead.description": {
-    "message": "Read your notifications"
+    "message": "阅读你的订阅"
   },
   "scopes.notificationRead.label": {
-    "message": "Read notifications"
+    "message": "阅读订阅"
   },
   "scopes.notificationWrite.description": {
     "message": "Delete/View your notifications"

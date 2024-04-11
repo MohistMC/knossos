@@ -349,7 +349,7 @@
           <span v-if="auth.user && auth.user.id === creator.id" class="preserve-lines text">
             <IntlFormatted :message-id="messages.noProjectsAuthLabel">
               <template #create-link="{ children }">
-                <a class="link" @click.prevent="$router.push('/mods')">
+                <a class="link" @click.prevent="$router.push('/plugins')">
                   <component :is="() => children" />
                 </a>
               </template>

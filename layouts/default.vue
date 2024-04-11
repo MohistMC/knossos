@@ -317,93 +317,6 @@
       <slot id="main" />
     </main>
     <footer>
-      <div class="logo-info" role="region" aria-label="Modrinth information">
-        <BrandTextLogo
-          aria-hidden="true"
-          class="text-logo button-base"
-          @click="developerModeIncrement()"
-        />
-        <p>
-          <IntlFormatted :message-id="footerMessages.openSource">
-            <template #github-link="{ children }">
-              <a
-                :target="$external()"
-                href="https://github.com/modrinth"
-                class="text-link"
-                rel="noopener"
-              >
-                <component :is="() => children" />
-              </a>
-            </template>
-          </IntlFormatted>
-        </p>
-        <p>
-          {{ config.public.owner }}/{{ config.public.slug }} {{ config.public.branch }}@<a
-            :target="$external()"
-            :href="
-              'https://github.com/' +
-              config.public.owner +
-              '/' +
-              config.public.slug +
-              '/tree/' +
-              config.public.hash
-            "
-            class="text-link"
-            rel="noopener"
-            >{{ config.public.hash.substring(0, 7) }}</a
-          >
-        </p>
-        <p>© Rinth, Inc.</p>
-      </div>
-      <div class="links links-1" role="region" aria-label="Legal">
-        <h4 aria-hidden="true">{{ formatMessage(footerMessages.companyTitle) }}</h4>
-        <nuxt-link to="/legal/terms"> {{ formatMessage(footerMessages.terms) }}</nuxt-link>
-        <nuxt-link to="/legal/privacy"> {{ formatMessage(footerMessages.privacy) }}</nuxt-link>
-        <nuxt-link to="/legal/rules"> {{ formatMessage(footerMessages.rules) }}</nuxt-link>
-        <a :target="$external()" href="https://careers.modrinth.com">
-          {{ formatMessage(footerMessages.careers) }}
-          <span v-if="false" class="count-bubble">0</span>
-        </a>
-      </div>
-      <div class="links links-2" role="region" aria-label="Resources">
-        <h4 aria-hidden="true">{{ formatMessage(footerMessages.resourcesTitle) }}</h4>
-        <a :target="$external()" href="https://support.modrinth.com">
-          {{ formatMessage(footerMessages.support) }}
-        </a>
-        <a :target="$external()" href="https://blog.modrinth.com">
-          {{ formatMessage(footerMessages.blog) }}
-        </a>
-        <a :target="$external()" href="https://docs.modrinth.com">
-          {{ formatMessage(footerMessages.docs) }}
-        </a>
-        <a :target="$external()" href="https://status.modrinth.com">
-          {{ formatMessage(footerMessages.status) }}
-        </a>
-      </div>
-      <div class="links links-3" role="region" aria-label="Interact">
-        <h4 aria-hidden="true">{{ formatMessage(footerMessages.interactTitle) }}</h4>
-        <a rel="noopener" :target="$external()" href="https://discord.modrinth.com"> Discord </a>
-        <a rel="noopener" :target="$external()" href="https://x.com/modrinth"> X (Twitter) </a>
-        <a rel="noopener" :target="$external()" href="https://floss.social/@modrinth"> Mastodon </a>
-        <a rel="noopener" :target="$external()" href="https://crowdin.com/project/modrinth">
-          Crowdin
-        </a>
-      </div>
-      <div class="buttons">
-        <nuxt-link class="btn btn-outline btn-primary" to="/app">
-          <DownloadIcon aria-hidden="true" />
-          {{ formatMessage(messages.getModrinthApp) }}
-        </nuxt-link>
-        <button class="iconified-button raised-button" @click="changeTheme">
-          <MoonIcon v-if="$colorMode.value === 'light'" aria-hidden="true" />
-          <SunIcon v-else aria-hidden="true" />
-          {{ formatMessage(messages.changeTheme) }}
-        </button>
-        <nuxt-link class="iconified-button raised-button" to="/settings">
-          <SettingsIcon aria-hidden="true" />
-          {{ formatMessage(commonMessages.settingsLabel) }}
-        </nuxt-link>
-      </div>
       <div class="not-affiliated-notice">
         {{ formatMessage(footerMessages.legalDisclaimer) }}
       </div>
@@ -565,7 +478,7 @@ const footerMessages = defineMessages({
   legalDisclaimer: {
     id: 'layout.footer.legal-disclaimer',
     defaultMessage:
-      'NOT AN OFFICIAL MINECRAFT SERVICE. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.',
+      '不是官方Minecraft服务。 未经Mojang或MICROSOFT批准或与MOJANG或MICROSOFT 相关。',
   },
 })
 
