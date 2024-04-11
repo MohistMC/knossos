@@ -205,10 +205,11 @@ const categorys = {
   'optimization': "优化",
   'economy': "经济",
   'equipment': "装备",
-  'food': "食物"
+  'food': "食物",
+  'magic': "魔法"
 }
 
-export const formatCategory = (name) => categorys [name] ?? capitalizeString(name);
+export const formatCategory = (name) => categorys[name] ?? capitalizeString(name);
 
 export const formatCategoryHeader = (name) => {
   return capitalizeString(name)
