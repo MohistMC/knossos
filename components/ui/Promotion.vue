@@ -29,8 +29,8 @@
   
   const props = withDefaults(
     defineProps<{
-      external: boolean
-      queryParam: string
+      external?: boolean
+      queryParam?: string
     }>(),
     {
       external: true,
